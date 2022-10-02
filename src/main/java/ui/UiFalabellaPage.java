@@ -16,7 +16,7 @@ public class UiFalabellaPage {
     public static By btnGoToBucket = By.id("linkButton");
     //----------------------Confirmacion de compra------------------------------------------------------------------------------------------------
     public static By ItemSelectToBuy = By.xpath("//span[@data-testid='name']");
-    public static By btnContinueBuy = By.xpath("//button[text()='Continuar compra ']");
+    public static By btnContinueBuy = By.xpath("//button[normalize-space()='Continuar compra']");
     public static By inputMail = By.id("testId-Input-email");
     public static By labelMail = By.xpath("//span[contains(text(),'Correo electrónico :')]");
     public static By btnContinueMail = By.xpath("//button[@data-testid='continueButton']");// para comprobar que es able o disable

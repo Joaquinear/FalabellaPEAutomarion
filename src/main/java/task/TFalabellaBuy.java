@@ -10,6 +10,7 @@ public class TFalabellaBuy {
     public static void Continue(WebDriver driver) throws InterruptedException {
         Click.on(driver, UiFalabellaPage.btnContinueBuy);
         if(IsDisplayed.element(driver,UiFalabellaPage.labelMail)){
+            Thread.sleep(2000);
             EnterText.text(driver,UiFalabellaPage.inputMail,"joaquinear94@gmail.com");
             Click.on(driver,UiFalabellaPage.btnContinueMail);
 
