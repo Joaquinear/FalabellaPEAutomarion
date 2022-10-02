@@ -59,8 +59,8 @@ public class BaseTest {
         }catch (Exception e){
             e.printStackTrace();
         }finally {
-//            if(driver != null)
-//                driver.quit();
+            if(driver != null)
+                driver.quit();
         }
     }
     @AfterSuite

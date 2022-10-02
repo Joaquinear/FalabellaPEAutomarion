@@ -1,9 +1,6 @@
 package task;
 
-import actions.Click;
-import actions.Enter;
-import actions.EnterText;
-import actions.IsDisplayed;
+import actions.*;
 import org.openqa.selenium.WebDriver;
 import ui.UiFalabellaPage;
 
@@ -38,7 +35,7 @@ public class TFalabellaBuy {
             Click.on(driver,UiFalabellaPage.btnGoToPay);
             Thread.sleep(5000);
             Click.on(driver,UiFalabellaPage.tc);
-            Thread.sleep(3000);
+            Thread.sleep(2000);
         }
     }
 }

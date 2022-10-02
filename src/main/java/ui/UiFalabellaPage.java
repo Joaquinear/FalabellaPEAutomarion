@@ -38,5 +38,6 @@ public class UiFalabellaPage {
     public static By crmFalabella = By.xpath("//div[@data-testid='testId-PaymentsDigitalFingerprints']");
     //================================================================================================================================
     public static By tc = By.xpath("//span[text()='Tarjeta de crédito']");
+    public static By frameTC = By.xpath("//iframe[@title='Agregar nueva tarjeta']");
     public static By numberTc = By.id("pan");
 }
