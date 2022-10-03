@@ -10,6 +10,7 @@ public class UiFalabellaPage {
     public static By resultSearchValidation = By.xpath("//h1[@title='Nintendo']"); // para comprar encontro resutlados
     public static By itemSelect = By.xpath("//b[text()='Consola Nintendo Switch Modelo Oled']");// para seleccionar y llevar al otro lado
     public static By nameProduct = By.xpath("//div[text()='Consola Nintendo Switch Modelo Oled']");
+    //public static By nameProduct = By.id("testId-pod-displaySubTitle-18413518");
     public static By moreItems = By.xpath("//button[.='+']"); // para aumetar items
     public static By btnAddBucket = By.xpath("//button[text()='Agregar al Carro']");// Agregar al carrito
     public static By garanty = By.id("testId-InCart-inPDP-WarrantyOption-btn-0");//GARANTIA

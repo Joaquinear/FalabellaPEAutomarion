@@ -1,6 +1,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestSuitCompleto" verbose="1" >
-    <test name="TestFlujoCompleto">
+    <parameter name="url" value="https://www.google.com/"></parameter>
+    <test name="TestGoogleChrome">
+        <parameter name="browser" value="firefox"></parameter>
+        <packages>
+            <package name="test.*" />
+        </packages>
+    </test>
+    <test name="TestFirefox">
+        <parameter name="browser" value="chrome"></parameter>
         <packages>
             <package name="test.*" />
         </packages>

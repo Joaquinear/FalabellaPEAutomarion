@@ -5,17 +5,16 @@ import helper.ScreenShotHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 import report.ReportManager;
 
 public class BaseTest {
     protected  String searchText = "Consola ps5";
     protected WebDriver driver;
+
 
     @BeforeSuite
     public void setUpSuit() throws Exception {
@@ -23,16 +22,27 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    public void setUp(ITestResult iTestResult){
+    @Parameters({"url","browser"})
+    public void setUp(ITestResult iTestResult, String url,String browser) throws Exception {
         ReportManager.getInstance().startTest(iTestResult.getMethod().getMethodName());
-        System.setProperty("webdriver.chrome.driver","resource/chromedriver.EXE");
-        DesiredCapabilities obj = new DesiredCapabilities();
-        ChromeOptions option = new ChromeOptions();
-        option.addArguments("--incognito");
-        obj.setCapability(ChromeOptions.CAPABILITY,option);
-        driver = new ChromeDriver(obj);
+        switch (browser){
+            case "chrome":
+                System.setProperty("webdriver.chrome.driver","resource/chromedriver.EXE");
+                DesiredCapabilities obj = new DesiredCapabilities();
+                ChromeOptions option = new ChromeOptions();
+                option.addArguments("--incognito");
+                obj.setCapability(ChromeOptions.CAPABILITY,option);
+                driver = new ChromeDriver(obj);
+                break;
+            case "firefox":
+                System.setProperty("webdriver.gecko.driver","resource/geckodriver.exe");
+                driver = new FirefoxDriver();
+                break;
+            default:
+                throw new Exception(browser + "No soportado");
+        }
+        driver.get(url);
         driver.manage().window().maximize();
-        driver.get("https://www.google.com/");
     }
 
 

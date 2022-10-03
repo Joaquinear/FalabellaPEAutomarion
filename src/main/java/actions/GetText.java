@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class GetText {
 
     public static String text(WebDriver driver, By locator){
-        WebDriverWait wait = new WebDriverWait(driver, 3);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         return driver.findElement(locator).getText();
     }

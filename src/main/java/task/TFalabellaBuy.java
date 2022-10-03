@@ -8,7 +8,9 @@ import java.awt.event.ActionListener;
 
 public class TFalabellaBuy {
     public static void Continue(WebDriver driver) throws InterruptedException {
+        Thread.sleep(1000);
         Click.on(driver, UiFalabellaPage.btnContinueBuy);
+        Thread.sleep(1000);
         if(IsDisplayed.element(driver,UiFalabellaPage.labelMail)){
             Thread.sleep(2000);
             EnterText.text(driver,UiFalabellaPage.inputMail,"joaquinear94@gmail.com");
