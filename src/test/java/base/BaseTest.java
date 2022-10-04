@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import report.ReportManager;
+import webdriver.WebdriverFactory;
 
 public class BaseTest {
     protected  String searchText = "Consola ps5";
@@ -25,26 +26,10 @@ public class BaseTest {
     @Parameters({"url","browser"})
     public void setUp(ITestResult iTestResult, String url,String browser) throws Exception {
         ReportManager.getInstance().startTest(iTestResult.getMethod().getMethodName());
-        switch (browser){
-            case "chrome":
-                System.setProperty("webdriver.chrome.driver","resource/chromedriver.EXE");
-                DesiredCapabilities obj = new DesiredCapabilities();
-                ChromeOptions option = new ChromeOptions();
-                option.addArguments("--incognito");
-                obj.setCapability(ChromeOptions.CAPABILITY,option);
-                driver = new ChromeDriver(obj);
-                break;
-            case "firefox":
-                System.setProperty("webdriver.gecko.driver","resource/geckodriver.exe");
-                driver = new FirefoxDriver();
-                break;
-            default:
-                throw new Exception(browser + "No soportado");
-        }
+        driver = WebdriverFactory.getdriver(browser);
         driver.get(url);
         driver.manage().window().maximize();
     }
-
 
     @AfterMethod
     public void tearDown(ITestResult iTestResult){

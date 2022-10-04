@@ -7,7 +7,7 @@ import ui.UiFalabellaPage;
 
 public class TFalabellaStartToBuy {
     public static String addBucket(WebDriver driver) throws InterruptedException {
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         String ItemInTime = GetText.text(driver,UiFalabellaPage.nameProduct);
         Click.on(driver,UiFalabellaPage.btnAddBucket);
         Click.on(driver,UiFalabellaPage.garanty);
