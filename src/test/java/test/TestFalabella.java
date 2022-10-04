@@ -1,6 +1,7 @@
 package test;
 
 import actions.GetText;
+import actions.IsDisplayed;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,5 +17,6 @@ public class TestFalabella extends BaseTest {
         Assert.assertEquals(itemInTime, GetText.text(driver,UiFalabellaPage.ItemSelectToBuy),"NO ITEM ELEGIDO NO COINDIDE");
         TFalabellaMore.Items(driver,1);
         TFalabellaBuy.Continue(driver);
+        Assert.assertTrue(IsDisplayed.element(driver,UiFalabellaPage.tc));
     }
 }

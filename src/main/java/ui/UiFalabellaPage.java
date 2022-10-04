@@ -13,7 +13,7 @@ public class UiFalabellaPage {
     //public static By nameProduct = By.id("testId-pod-displaySubTitle-18413518");
     public static By moreItems = By.xpath("//button[.='+']"); // para aumetar items
     public static By btnAddBucket = By.xpath("//button[text()='Agregar al Carro']");// Agregar al carrito
-    public static By garanty = By.id("testId-InCart-inPDP-WarrantyOption-btn-0");//GARANTIA
+    public static By garanty = By.xpath("(//button/span[contains(text(),'Garant')])[1]");//GARANTIA
     public static By btnGoToBucket = By.id("linkButton");
     //----------------------Confirmacion de compra------------------------------------------------------------------------------------------------
     public static By ItemSelectToBuy = By.xpath("//span[@data-testid='name']");

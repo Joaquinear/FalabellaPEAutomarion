@@ -23,10 +23,10 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    @Parameters({"url","browser"})
-    public void setUp(ITestResult iTestResult, String url,String browser) throws Exception {
+    @Parameters({"url","browser","seleniumGrid"})
+    public void setUp(ITestResult iTestResult, String url,String browser,String seleniumGrid) throws Exception {
         ReportManager.getInstance().startTest(iTestResult.getMethod().getMethodName());
-        driver = WebdriverFactory.getdriver(browser);
+        driver = WebdriverFactory.getdriver(browser,seleniumGrid);
         driver.get(url);
         driver.manage().window().maximize();
     }

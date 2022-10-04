@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuitCompleto" verbose="1" >
+    <parameter name="url" value="https://www.google.com/"></parameter>
+    <parameter name="seleniumGrid" value="http://localhost:4445/wd/hub/"></parameter>
+    <test name="TestFirefox">
+        <parameter name="browser" value="firefox-remote"></parameter>
+        <packages>
+            <package name="test.*" />
+        </packages>
+    </test>
+    <test name="TestChrome">
+        <parameter name="browser" value="chrome-remote"></parameter>
+        <packages>
+            <package name="test.*" />
+        </packages>
+    </test>
+</suite>
